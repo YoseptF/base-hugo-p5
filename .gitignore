@@ -1,0 +1,19 @@
+# Created by https://www.gitignore.io/api/hugo
+# Edit at https://www.gitignore.io/?templates=hugo
+
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/js/bundle.js
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# node
+node_modules
+dist
+
+# End of https://www.gitignore.io/api/hugo

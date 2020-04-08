@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  {{ $sketch := resources.Get "js/sketch.js" | minify | fingerprint }}
+  <script src="{{ $sketch.RelPermalink }}"></script>
+  <title>
+    {{ block "title" . }} {{ .Site.Title }} {{ end }}
+  </title>
+</head>
+
+<body>
+  {{ block "main" . }}
+  <!-- The part of the page that begins to differ between templates -->
+  {{ end }}
+</body>
+
+</html>
